@@ -1,0 +1,19 @@
+package com.task3;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class PreparedDemo
+{
+	public static void main(String args[]) throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://@localhost3306/task","root","root");
+		PreparedStatement pst=con.prepareStatement("create table student22(sid int,sname varchar(10))");
+		pst.execute();
+		con.close();
+		System.out.println("executed successfully");
+	}
+}	

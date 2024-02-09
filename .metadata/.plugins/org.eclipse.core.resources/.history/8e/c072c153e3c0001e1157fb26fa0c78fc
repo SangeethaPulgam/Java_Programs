@@ -1,0 +1,51 @@
+package com.task2;
+class Example
+{
+	void PrintExample(int n)
+	{
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println(n*i);
+		}
+	}
+}
+class myThread1 extends Thread
+{
+	Example e;
+	myThread1(Example e)
+	{
+		this.e=e;
+		
+	}
+	public void run()
+	{
+		e.PrintExample(5);
+	}
+	
+	
+}
+class myThread2 extends Thread
+{
+	Example e;
+	myThread2(Example e)
+	{
+		this.e=e;
+	}
+	public void run()
+	{
+		e.PrintExample(7);
+	}
+
+}
+public class ThreadExample 
+{
+	public static void main(String args[]) 
+	{
+		Example e1=new Example();
+		myThread1 m1=new myThread1(e1);
+		myThread2 m2=new myThread2(e1);
+		m1.start();
+		m2.start();
+		
+	}
+}

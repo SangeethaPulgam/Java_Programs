@@ -1,0 +1,68 @@
+package com.task3;
+import com.task.service.*;
+import com.task.bean.*;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Applications
+{
+	public static void main(String args[]) throws  SQLException, ClassNotFoundException 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter your option");
+		System.out.println("1.insert");
+		System.out.println("2.Update");
+		System.out.println("3.Select");
+		System.out.println("4.Delete");
+		int option=sc.nextInt();
+		switch(option)
+		{
+		case 1:
+			{
+				insertEmployee();
+				break;
+			}
+		
+		case 2:
+			{
+				updateEmployee();
+				break;
+			}
+		
+		case 3:
+			{
+				//selectEmployee();
+			}
+		
+		case 4:
+			{
+				//deleteEmployee();
+			}
+		default:
+			{
+				System.out.println("option  selected is not present");
+			}
+		
+		
+		}
+		
+		
+	}
+
+	private static void insertEmployee() throws ClassNotFoundException, SQLException 
+	{
+		EmployeeServiceImpl service=new EmployeeServiceImpl();
+		Employee emp=new Employee();
+		emp.setEmpName("sangeetha");
+		emp.setEmpAddress("hyderabad");
+		service.insertEmployee(emp);
+		
+	}
+	private static void updateEmployee() throws ClassNotFoundException, SQLException
+	{
+		EmployeeServiceImpl service1=new EmployeeServiceImpl();
+		Employee emp=new Employee();
+		service1.updateEmployee(emp);
+	}
+}

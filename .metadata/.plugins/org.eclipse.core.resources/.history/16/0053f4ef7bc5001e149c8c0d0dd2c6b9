@@ -1,0 +1,62 @@
+package com.task1;
+import java.sql.DriverManager;
+import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class CrudApps 
+{
+	public static void main(String args[]) throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://@localhost:3306/task","root","root");
+		Statement st=con.createStatement();
+		System.out.println("1: to create a table");
+		System.out.println("2: to insert values into the table");
+		System.out.println("3: to update values in the table");
+		System.out.println("4:to read values in the table");
+		System.out.println("5: to delete rows from a table");
+		System.out.println("6: if you want to proceed second time");
+		System.out.println("Select your option");
+		
+		
+		//st.executeUpdate("create table student(st_id int,st_name varchar(20),branch varchar(20)"));
+		
+		
+	  Scanner sc=new Scanner(System.in);
+	  int option = sc.nextInt();
+	  sc.nextLine();
+	  switch(option)
+	{
+		case 1: 
+			{
+				System.out.println("you have selected option 1 to create table");
+				String create=sc.nextLine();
+				st.executeUpdate(create);
+				System.out.println("you have successfully created the table");
+				break;
+		   }
+		case 2:
+			{
+				System.out.println("you have selected option 2 to insert values into the table");
+				System.out.println("enter student id");
+				int st_id=sc.nextInt();
+				System.out.println("enter student name");
+				String st_name=sc.nextLine();
+				System.out.println("enter branch of the student");
+				String branch=sc.nextLine();
+				break;
+			}
+		case 3:
+			{
+				System.out.println("you have selected the 3 rd option to update the data ");
+				
+				
+			}
+		con.close();
+			
+	}
+}
+}

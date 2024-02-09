@@ -1,0 +1,95 @@
+package com.task1;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class CrudApps 
+{
+	public static void main(String args[]) throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://@localhost:3306/task","root","root");
+		
+		System.out.println("1: to create a table");
+		System.out.println("2: to insert values into the table");
+		System.out.println("3: to update values in the table");
+		System.out.println("4:to read values in the table");
+		System.out.println("5: to delete rows from a table");
+		System.out.println("6: if you want to proceed second time");
+		System.out.println("Select your option");
+		
+		
+		//st.executeUpdate("create table student(st_id int,st_name varchar(20),branch varchar(20)"));
+		
+		
+	  Scanner sc=new Scanner(System.in);
+	  int option = sc.nextInt();
+	  sc.nextLine();
+	  switch(option)
+	{
+		case 1: 
+			{
+				System.out.println("you have selected option 1 to create table");
+				String create=sc.nextLine();
+				st.executeUpdate(create);
+				System.out.println("you have successfully created the table");
+				break;
+		   }
+		case 2:
+	    {
+	        System.out.println("You have selected option 2 to insert values into the table");
+	        System.out.println("Enter student id");
+	        int st_id = sc.nextInt();
+	        sc.nextLine(); // Consume the newline character left by nextInt()
+
+	        System.out.println("Enter student name");
+	        String st_name = sc.nextLine();
+
+	        System.out.println("Enter branch of the student");
+	        String branch = sc.nextLine();
+
+	        try {
+	            Connection connection;
+				// Assuming 'st' is a Statement object and 'connection' is your database connection
+	            Statement st = connection.createStatement();
+
+	            // Use PreparedStatement to avoid SQL injection
+	            String query = "INSERT INTO your_table_name (student_id, student_name, branch) VALUES (?, ?, ?)";
+	            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+	            // Set values for parameters
+	            preparedStatement.setInt(1, st_id);
+	            preparedStatement.setString(2, st_name);
+	            preparedStatement.setString(3, branch);
+
+	            // Execute the update
+	            int rowsAffected = preparedStatement.executeUpdate();
+
+	            if (rowsAffected > 0) {
+	                System.out.println("You have successfully inserted values into the table");
+	            } else {
+	                System.out.println("Failed to insert values into the table");
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace(); // Handle the exception appropriately
+	        }
+
+	        break;
+	    }
+
+		default :
+		{
+			System.out.println("invalid option selected");
+				
+				
+			}
+			
+		con.close();
+			
+	}
+}
+}

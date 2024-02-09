@@ -1,0 +1,6 @@
+package com.task.service;
+import com.task.bean.*;
+public interface EmployeeServiceI {
+	void insertEmployee(Employee emp);
+
+}

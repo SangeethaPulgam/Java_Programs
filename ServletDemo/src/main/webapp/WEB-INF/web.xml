@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+<welcome-list-file>
+<welcome-file>Registration.html</welcome-file>
+</welcome-list-file>
+<servlet>
+<servlet-name>Registration</servlet-name>
+<servlet-class>com.task.Registration</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Registration</servlet-name>
+<url-pattern>/register</url-pattern>
+</servlet-mapping>
+</web-app>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<welcome-file-list>
+<welcome-file>index.html</welcome-file>
+<servlet>
+<servlet-name> name1</servlet-name>
+<servlet-class>com.test.Servlet1</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+<url-pattern>/demo</url-pattern>
+<servlet-name>name1</servlet-name>
+</servlet-mapping>
+<servlet>
+<servlet-name>demo</servlet-name>
+<servlet-class>com.test.SampleServletDemo</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>demo</servlet-name>
+<url-pattern>/demo</url-pattern>
+</servlet-mapping>
+</welcome-file-list>

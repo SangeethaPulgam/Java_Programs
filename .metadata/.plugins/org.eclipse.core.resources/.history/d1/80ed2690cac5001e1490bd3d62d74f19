@@ -1,0 +1,9 @@
+package com.task.da;
+import java.sql.SQLException;
+
+import com.task.bean.*;
+
+public interface EmployeeDaol {
+
+	public void insertEmployee(Employee emp) throws ClassNotFoundException, SQLException;
+}

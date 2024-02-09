@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+background-color:blue;
+color:black;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<h2> welcome to home page</h2>
+<br>
+<br>
+User Name:<input type="text" name="username">
+<br>
+<br>
+password:<input type="password" name="password">
+<br>
+<br>
+<input type="submit" value="submit">
+</div>
+</body>
+</html>

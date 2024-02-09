@@ -1,0 +1,12 @@
+package com.task.service;
+import com.task.da.*;
+import com.task.bean.Employee;
+
+public class EmployeeServiceImpl implements EmployeeServiceI{
+
+	@Override
+	public void insertEmployee(Employee emp) {
+		EmployeeDaol dao=new EmployeeDaolmpl();
+		
+	}
+}
